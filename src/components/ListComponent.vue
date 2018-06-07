@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     addNewProduct(){
-      this.$store.commit('addNewItem',{ name: 'samsung', price: 30000 });
+      this.$store.dispatch('addNewItemAction',{ name: 'samsung', price: 30000 });
     },
   },
 };

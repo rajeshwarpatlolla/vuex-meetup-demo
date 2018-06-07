@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
+  // strict: true,
   state: {
     list: [{ name: 'apple', price: 40000 }, { name: 'mi', price: 20000 }],
   },
@@ -13,6 +14,11 @@ const store = new Vuex.Store({
   mutations: {
     addNewItem: (state, item) => {
       state.list.push(item);
+    },
+  },
+  actions: {
+    addNewItemAction: (state, item) => {
+      state.commit('addNewItem', item);
     },
   },
 });
