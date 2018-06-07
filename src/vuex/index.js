@@ -17,8 +17,8 @@ const store = new Vuex.Store({
     },
   },
   actions: {
-    addNewItemAction: (state, item) => {
-      state.commit('addNewItem', item);
+    addNewItemAction: (state) => {
+      state.commit('addNewItem', { name: 'samsung', price: 30000 });
     },
   },
 });

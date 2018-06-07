@@ -1,28 +1,30 @@
 <template>
   <div class="ListComponent">
     <h2>This is ListComponent</h2>
-    <div v-for="(item, index) of list" :key="index">
+    <div v-for="(item, index) of listOfItems" :key="index">
       {{item.name}} - {{item.price}}
     </div>
-    <button @click="addNewProduct()">Add new</button>
+    <button @click="addNewItemAction()">Add new</button>
   </div>
 </template>
 
 <script>
+import {mapActions, mapGetters} from 'vuex';
+
 export default {
 	name: 'ListComponent',
 	data() {
 		return {};
   },
   computed:{
-    list(){
-      return this.$store.getters.listOfItems;
-    }
+    ...mapGetters([
+      'listOfItems'
+    ]),
   },
   methods:{
-    addNewProduct(){
-      this.$store.dispatch('addNewItemAction',{ name: 'samsung', price: 30000 });
-    },
+    ...mapActions([
+      'addNewItemAction'
+    ]),
   },
 };
 </script>
