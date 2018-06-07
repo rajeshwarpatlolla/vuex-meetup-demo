@@ -4,6 +4,7 @@
     <div v-for="(item, index) of list" :key="index">
       {{item.name}} - {{item.price}}
     </div>
+    <button @click="addNewProduct()">Add new</button>
   </div>
 </template>
 
@@ -17,7 +18,12 @@ export default {
     list(){
       return this.$store.getters.listOfItems;
     }
-  }
+  },
+  methods:{
+    addNewProduct(){
+      this.$store.state.list.push({ name: 'samsung', price: 30000 });
+    },
+  },
 };
 </script>
 
