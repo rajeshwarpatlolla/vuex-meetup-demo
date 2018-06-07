@@ -4,7 +4,7 @@
     <div v-for="(item, index) of listOfItems" :key="index">
       {{item.name}} - {{item.price}}
     </div>
-    <button @click="addNewItemAction()">Add new</button>
+    <button @click="addNewItem()">Add new</button>
   </div>
 </template>
 
@@ -25,6 +25,9 @@ export default {
     ...mapActions([
       'addNewItemAction'
     ]),
+    addNewItem(){
+      this.addNewItemAction({ name: 'samsung', price: 30000 });
+    }
   },
 };
 </script>
