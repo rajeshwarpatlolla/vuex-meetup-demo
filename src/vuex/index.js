@@ -10,6 +10,11 @@ const store = new Vuex.Store({
   getters: {
     listOfItems: state => state.list,
   },
+  mutations: {
+    addNewItem: (state, item) => {
+      state.list.push(item);
+    },
+  },
 });
 
 export default store;

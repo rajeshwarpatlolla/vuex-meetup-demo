@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     addNewProduct(){
-      this.$store.state.list.push({ name: 'samsung', price: 30000 });
+      this.$store.commit('addNewItem',{ name: 'samsung', price: 30000 });
     },
   },
 };
