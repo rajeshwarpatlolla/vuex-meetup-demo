@@ -1,10 +1,10 @@
 <template>
-	<div class="ListComponent">
-		<h2>This is ListComponent</h2>
+  <div class="ListComponent">
+    <h2>This is ListComponent</h2>
     <div v-for="(item, index) of list" :key="index">
       {{item.name}} - {{item.price}}
     </div>
-	</div>
+  </div>
 </template>
 
 <script>
@@ -13,7 +13,11 @@ export default {
 	data() {
 		return {};
   },
-  props:['list'],
+  computed:{
+    list(){
+      return this.$store.state.list;
+    }
+  }
 };
 </script>
 
