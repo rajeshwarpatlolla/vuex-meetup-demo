@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2>This is home component.</h2>
+    <h2>This is home component</h2>
     <ListComponent/>
   </div>
 </template>
